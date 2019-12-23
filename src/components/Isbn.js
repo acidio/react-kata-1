@@ -1,14 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
+
 import { Header } from 'semantic-ui-react';
-import { useParams } from "react-router-dom";
+import { useParams } from 'react-router-dom';
+
+import DataContext from '../store/DataContext';
 
 function Isbn() {
-  let { id } = useParams();
+  const { id } = useParams();
+
+  const data = useContext(DataContext);
+
+  const item = data.library[id];
 
   return (
     <div>
-        <Header as='h1'>ISBN: {id} </Header>
-        <p>Please follow the complete instructions from this Kata.</p>
+      <Header as="h1">ISBN: {id} </Header>
+      {item && <div>{item.title}</div>}
     </div>
   );
 }

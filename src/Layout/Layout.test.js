@@ -1,9 +1,9 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import Layout from './Layout';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { render } from 'enzyme';
+import React from 'react';
+import ReactDOM from 'react-dom';
 
+import Layout from './Layout';
 
 function LayoutWrapper() {
   return (
@@ -20,7 +20,7 @@ it('renders Layout', () => {
 });
 
 it('should render correctly with no props', () => {
-  const component = render(<LayoutWrapper/>);
-  
+  const component = render(<LayoutWrapper />);
+
   expect(component).toMatchSnapshot();
 });
